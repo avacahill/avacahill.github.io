@@ -124,7 +124,7 @@ nav a:hover{
   pointer-events:none;
 }
 
-/* curved branches */
+/* branches */
 .branch{
   fill:none;
   stroke:#5f6f52;
@@ -136,7 +136,6 @@ nav a:hover{
   animation:grow 7s ease forwards;
 }
 
-/* stagger */
 .branch:nth-child(1){animation-delay:0s;}
 .branch:nth-child(2){animation-delay:0.3s;}
 .branch:nth-child(3){animation-delay:0.5s;}
@@ -235,29 +234,28 @@ nav a:hover{
 
 <svg class="phylo-bg" viewBox="0 0 1000 600" preserveAspectRatio="none">
 
-  <!-- trunk -->
-  <path class="branch" d="M500 580 C500 520 500 480 500 430" />
+  <!-- top root -->
+  <path class="branch" d="M500 40 C500 80 500 120 500 170" />
 
-  <!-- split -->
-  <path class="branch" d="M500 430 C420 360 350 320 300 250" />
-  <path class="branch" d="M500 430 C580 360 650 320 700 250" />
+  <!-- first split -->
+  <path class="branch" d="M500 170 C420 240 350 300 300 350" />
+  <path class="branch" d="M500 170 C580 240 650 300 700 350" />
 
-  <!-- left branches -->
-  <path class="branch" d="M300 250 C260 200 230 160 200 120" />
-  <path class="branch" d="M300 250 C340 200 370 160 400 120" />
+  <!-- second splits -->
+  <path class="branch" d="M300 350 C260 420 230 470 200 520" />
+  <path class="branch" d="M300 350 C340 420 370 470 420 520" />
 
-  <!-- right branches -->
-  <path class="branch" d="M700 250 C660 200 630 160 600 120" />
-  <path class="branch" d="M700 250 C740 200 770 160 820 120" />
+  <path class="branch" d="M700 350 C660 420 630 470 600 520" />
+  <path class="branch" d="M700 350 C740 420 780 470 840 520" />
 
   <!-- nodes -->
-  <circle class="node" cx="500" cy="430" r="3"/>
-  <circle class="node" cx="300" cy="250" r="3"/>
-  <circle class="node" cx="700" cy="250" r="3"/>
-  <circle class="node" cx="200" cy="120" r="3"/>
-  <circle class="node" cx="400" cy="120" r="3"/>
-  <circle class="node" cx="600" cy="120" r="3"/>
-  <circle class="node" cx="820" cy="120" r="3"/>
+  <circle class="node" cx="500" cy="170" r="3"/>
+  <circle class="node" cx="300" cy="350" r="3"/>
+  <circle class="node" cx="700" cy="350" r="3"/>
+  <circle class="node" cx="200" cy="520" r="3"/>
+  <circle class="node" cx="420" cy="520" r="3"/>
+  <circle class="node" cx="600" cy="520" r="3"/>
+  <circle class="node" cx="840" cy="520" r="3"/>
 
 </svg>
 
@@ -276,7 +274,7 @@ nav a:hover{
   <div class="about-container">
 
     <div class="about-image">
-      <img src="ava-cahill.jpg" alt="Ava Cahill">
+      <img src="Senior Photo.jpeg" alt="Ava Cahill">
     </div>
 
     <div class="about-text">
