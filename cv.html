@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>CV — Ava Cahill</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#faf7ff;--bg2:#f0eafa;--bg3:#e4d9f5;--border:#cbbde8;
+  --ink:#180630;--ink2:#2d0a4e;--muted:#7c6a94;
+  --accent:#5b21b6;--accent2:#7c3aed;--tag:#9d174d;--blue:#1e3a8a;
+}
+body{font-family:'Jost',sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;}
+nav{
+  position:sticky;top:0;z-index:50;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 3rem;height:52px;
+  background:rgba(250,247,255,0.9);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+}
+.nav-name{font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--ink);text-decoration:none;letter-spacing:0.04em;}
+.nav-links{display:flex;gap:2.2rem;list-style:none;}
+.nav-links a{text-decoration:none;font-size:0.72rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);transition:color 0.2s;}
+.nav-links a:hover,.nav-links a.active{color:var(--accent);}
+
+.container{max-width:800px;margin:0 auto;padding:4rem 2rem 6rem;}
+
+.page-eyebrow{font-size:0.68rem;font-weight:500;letter-spacing:0.18em;text-transform:uppercase;color:var(--tag);margin-bottom:0.8rem;}
+.page-title{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.4rem);font-weight:300;line-height:1.1;color:var(--ink);margin-bottom:0.8rem;}
+.page-title em{font-style:italic;color:var(--accent2);}
+.page-sub{font-size:0.88rem;color:var(--muted);font-weight:300;margin-bottom:3rem;}
+
+.cv-block{margin-bottom:3rem;}
+.cv-block-title{
+  font-size:0.68rem;font-weight:500;letter-spacing:0.14em;text-transform:uppercase;
+  color:var(--accent);padding-bottom:0.55rem;
+  border-bottom:1px solid var(--border);margin-bottom:1.4rem;
+}
+.cv-entry{
+  display:grid;grid-template-columns:1fr auto;
+  gap:0.8rem 1.4rem;margin-bottom:1.3rem;align-items:start;
+}
+.cv-entry-title{font-size:0.92rem;font-weight:500;color:var(--ink);margin-bottom:0.18rem;}
+.cv-entry-sub{font-size:0.82rem;font-weight:300;color:var(--ink2);line-height:1.5;}
+.cv-entry-sub em{font-style:italic;}
+.cv-date{font-size:0.78rem;color:var(--muted);white-space:nowrap;text-align:right;padding-top:2px;}
+
+.skills-wrap{display:flex;flex-wrap:wrap;gap:0.45rem;}
+.skill-tag{
+  font-size:0.78rem;font-weight:300;
+  padding:0.28rem 0.85rem;
+  border-radius:20px;
+  background:var(--bg2);border:1px solid var(--border);
+  color:var(--ink2);
+}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:translateY(0);}}
+.fade{opacity:0;animation:fadeUp 0.6s forwards;}
+
+@media(max-width:640px){
+  nav{padding:0 1.2rem;}.container{padding:3rem 1.2rem 5rem;}
+  .cv-entry{grid-template-columns:1fr;}.cv-date{text-align:left;}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-name">Ava Cahill</a>
+  <ul class="nav-links">
+    <li><a href="research.html">Research</a></li>
+    <li><a href="cv.html" class="active">CV</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
+</nav>
+
+<div class="container">
+  <div class="page-eyebrow fade" style="animation-delay:0.05s">Curriculum Vitae</div>
+  <h1 class="page-title fade" style="animation-delay:0.15s">Education,<br><em>experience &amp; skills</em></h1>
+  <p class="page-sub fade" style="animation-delay:0.22s">Johns Hopkins University · Department of Psychological and Brain Sciences</p>
+
+  <div class="cv-block fade" style="animation-delay:0.3s">
+    <div class="cv-block-title">Education</div>
+    <div class="cv-entry">
+      <div>
+        <div class="cv-entry-title">PhD, Psychology — Johns Hopkins University, Baltimore, MD</div>
+        <div class="cv-entry-sub">Advisor: Dr. Christopher Krupenye</div>
+      </div>
+      <div class="cv-date">Expected May 2030</div>
+    </div>
+    <div class="cv-entry">
+      <div>
+        <div class="cv-entry-title">BS, Psychology (Minor: Art History) — Boston College, Chestnut Hill, MA</div>
+        <div class="cv-entry-sub"><em>Magna Cum Laude</em> · Scholar of the College · Honors Psychology Program</div>
+      </div>
+      <div class="cv-date">May 2025</div>
+    </div>
+    <div class="cv-entry">
+      <div>
+        <div class="cv-entry-title">Study Abroad — Universiteit van Amsterdam, Amsterdam, NL</div>
+        <div class="cv-entry-sub">Advisor: Dr. Angie Johnston</div>
+      </div>
+      <div class="cv-date">Fall 2023</div>
+    </div>
+  </div>
+
+  <div class="cv-block fade" style="animation-delay:0.38s">
+    <div class="cv-block-title">Research Experience</div>
+    <div class="cv-entry">
+      <div>
+        <div class="cv-entry-title">Honors Thesis Student — Boston College Canine Cognition Center</div>
+        <div class="cv-entry-sub">Comparative psychology, evolutionary social learning, canid domestication</div>
+      </div>
+      <div class="cv-date">Jan 2024 – May 2025</div>
+    </div>
+    <div class="cv-entry">
+      <div>
+        <div class="cv-entry-title">Summer Research Intern — Boston College Canine Cognition Center</div>
+      </div>
+      <div class="cv-date">June – Aug 2024</div>
+    </div>
+    <div class="cv-entry">
+      <div>
+        <div class="cv-entry-title">Research Assistant — Boston College Canine Cognition Center</div>
+        <div class="cv-entry-sub">Tested 70+ dogs on 7 projects · 30+ children on 3 projects · field work at Discovery Museum (MA) and Ape Initiative (IA)</div>
+      </div>
+      <div class="cv-date">Aug 2022 – May 2025</div>
+    </div>
+  </div>
+
+  <div class="cv-block fade" style="animation-delay:0.44s">
+    <div class="cv-block-title">Teaching &amp; Mentorship</div>
+    <div class="cv-entry">
+      <div>
+        <div class="cv-entry-title">Teaching Assistant — Brain, Mind, and Behavior (PSYC1102), Boston College</div>
+      </div>
+      <div class="cv-date">Jan – May 2025</div>
+    </div>
+    <div class="cv-entry">
+      <div>
+        <div class="cv-entry-title">Mentor — Fiorella Durand (Undergraduate Thesis), Johns Hopkins University</div>
+        <div class="cv-entry-sub">"Can dogs infer the content of others' minds?" · Student awarded <em>Provost's Undergraduate Research Award</em></div>
+      </div>
+      <div class="cv-date">Jan 2026 – Present</div>
+    </div>
+    <div class="cv-entry">
+      <div>
+        <div class="cv-entry-title">Recruitment Host — Dept. of Psychological and Brain Sciences, JHU</div>
+      </div>
+      <div class="cv-date">Aug 2025 – Present</div>
+    </div>
+  </div>
+
+  <div class="cv-block fade" style="animation-delay:0.50s">
+    <div class="cv-block-title">Awards &amp; Honors</div>
+    <div class="cv-entry">
+      <div><div class="cv-entry-title">Scholar of the College Designation — Boston College</div></div>
+      <div class="cv-date">May 2025</div>
+    </div>
+    <div class="cv-entry">
+      <div>
+        <div class="cv-entry-title">Dean's List, First Honors — Boston College</div>
+        <div class="cv-entry-sub">Every semester, Fall 2021 – Spring 2025</div>
+      </div>
+    </div>
+    <div class="cv-entry">
+      <div><div class="cv-entry-title">Psi Chi Psychology Honor Society</div></div>
+      <div class="cv-date">May 2023</div>
+    </div>
+    <div class="cv-entry">
+      <div><div class="cv-entry-title">Dever Award for Freshman Writing ($1,000) — Boston College</div></div>
+      <div class="cv-date">May 2022</div>
+    </div>
+    <div class="cv-entry">
+      <div><div class="cv-entry-title">John A. Ernst III Scholarship ($1,000) — Central Ocean Rotary Club</div></div>
+      <div class="cv-date">June 2021</div>
+    </div>
+  </div>
+
+  <div class="cv-block fade" style="animation-delay:0.56s">
+    <div class="cv-block-title">Certifications</div>
+    <div class="cv-entry">
+      <div><div class="cv-entry-title">Wilderness First Aid — Stonehearth Open Learning Opportunities</div></div>
+      <div class="cv-date">Nov 2024</div>
+    </div>
+    <div class="cv-entry">
+      <div><div class="cv-entry-title">CITI Social/Behavioral Research Course</div></div>
+      <div class="cv-date">June 2025</div>
+    </div>
+    <div class="cv-entry">
+      <div><div class="cv-entry-title">CITI Working with Dogs in Research Settings</div></div>
+      <div class="cv-date">Sept 2022</div>
+    </div>
+  </div>
+
+  <div class="cv-block fade" style="animation-delay:0.62s">
+    <div class="cv-block-title">Research Skills</div>
+    <div class="skills-wrap">
+      <span class="skill-tag">Study design &amp; preregistration</span>
+      <span class="skill-tag">Human &amp; non-human data collection</span>
+      <span class="skill-tag">R (statistical analysis)</span>
+      <span class="skill-tag">BORIS behavioral coding</span>
+      <span class="skill-tag">Apparatus building &amp; piloting</span>
+      <span class="skill-tag">Field research</span>
+      <span class="skill-tag">Data management</span>
+      <span class="skill-tag">Comparative psychology</span>
+    </div>
+  </div>
+
+  <div class="cv-block fade" style="animation-delay:0.68s">
+    <div class="cv-block-title">Professional Memberships</div>
+    <div class="cv-entry">
+      <div><div class="cv-entry-title">Comparative Cognition Society</div></div>
+      <div class="cv-date">2026 – Present</div>
+    </div>
+  </div>
+</div>
+
+<script>
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.style.animationPlayState='running';}),{threshold:0.1});
+document.querySelectorAll('.fade').forEach(el=>{el.style.animationPlayState='paused';obs.observe(el);});
+</script>
+</body>
+</html>
