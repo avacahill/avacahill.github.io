@@ -1,339 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Ava Cahill</title>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --bg:       #faf7ff;
-  --bg2:      #f0eafa;
-  --bg3:      #e4d9f5;
-  --border:   #cbbde8;
-  --ink:      #180630;
-  --ink2:     #2d0a4e;
-  --muted:    #7c6a94;
-  --accent:   #5b21b6;
-  --accent2:  #7c3aed;
-  --tag:      #9d174d;
-  --blue:     #1e3a8a;
-}
-html,body{height:100%;overflow:hidden;}
-body{
-  font-family:'Jost',sans-serif;
-  background:var(--bg);
-  color:var(--ink);
-  display:flex;
-  flex-direction:column;
-}
-
-/* ── NAV ── */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:50;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:0 3rem;height:52px;
-  background:rgba(250,247,255,0.88);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--border);
-}
-.nav-name{
-  font-family:'Cormorant Garamond',serif;
-  font-size:1.1rem;font-weight:600;
-  color:var(--ink);text-decoration:none;
-  letter-spacing:0.04em;
-}
-.nav-links{display:flex;gap:2.2rem;list-style:none;}
-.nav-links a{
-  text-decoration:none;font-size:0.72rem;font-weight:500;
-  letter-spacing:0.12em;text-transform:uppercase;
-  color:var(--muted);transition:color 0.2s;
-}
-.nav-links a:hover{color:var(--accent);}
-
-/* ── MAIN LAYOUT ── */
-.page{
-  flex:1;display:grid;
-  grid-template-columns:1fr 1fr;
-  padding-top:52px;
-  height:calc(100vh - 52px);
-  overflow:hidden;
-}
-
-/* ── LEFT — NAME HERO ── */
-.hero-left{
-  display:flex;flex-direction:column;
-  justify-content:center;
-  padding:4rem 3.5rem 4rem 4rem;
-  position:relative;
-  border-right:1px solid var(--border);
-}
-
-/* subtle background geometry */
-.hero-left::before{
-  content:'';
-  position:absolute;
-  top:-80px;left:-80px;
-  width:420px;height:420px;
-  border-radius:50%;
-  background:radial-gradient(circle,rgba(124,58,237,0.07) 0%,transparent 70%);
-  pointer-events:none;
-}
-.hero-left::after{
-  content:'';
-  position:absolute;
-  bottom:-60px;right:20px;
-  width:260px;height:260px;
-  border-radius:50%;
-  background:radial-gradient(circle,rgba(157,23,77,0.05) 0%,transparent 70%);
-  pointer-events:none;
-}
-
-.eyebrow{
-  font-size:0.68rem;font-weight:500;
-  letter-spacing:0.18em;text-transform:uppercase;
-  color:var(--tag);
-  margin-bottom:1.2rem;
-  opacity:0;animation:fadeUp 0.7s 0.1s forwards;
-}
-h1{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(3.2rem,5.5vw,5.5rem);
-  font-weight:300;
-  line-height:1.05;
-  color:var(--ink);
-  margin-bottom:1.6rem;
-  opacity:0;animation:fadeUp 0.7s 0.25s forwards;
-}
-h1 em{
-  font-style:italic;
-  color:var(--accent2);
-  font-weight:300;
-}
-.tagline{
-  font-size:0.95rem;font-weight:300;
-  color:var(--muted);
-  line-height:1.75;
-  max-width:400px;
-  margin-bottom:3rem;
-  opacity:0;animation:fadeUp 0.7s 0.4s forwards;
-}
-.tagline strong{color:var(--ink2);font-weight:500;}
-
-.nav-pills{
-  display:flex;flex-direction:column;gap:0.6rem;
-  opacity:0;animation:fadeUp 0.7s 0.55s forwards;
-}
-.pill{
-  display:flex;align-items:center;gap:1rem;
-  padding:1rem 1.4rem;
-  background:var(--bg);
-  border:1px solid var(--border);
-  border-radius:8px;
-  text-decoration:none;
-  color:var(--ink2);
-  font-size:0.88rem;font-weight:400;
-  transition:all 0.22s;
-  position:relative;overflow:hidden;
-}
-.pill::before{
-  content:'';
-  position:absolute;left:0;top:0;bottom:0;
-  width:3px;
-  background:var(--accent);
-  transform:scaleY(0);
-  transition:transform 0.2s;
-  border-radius:0 2px 2px 0;
-}
-.pill:hover{
-  background:var(--bg2);
-  border-color:var(--accent2);
-  transform:translateX(4px);
-}
-.pill:hover::before{transform:scaleY(1);}
-.pill-icon{
-  width:32px;height:32px;border-radius:6px;
-  display:flex;align-items:center;justify-content:center;
-  font-size:0.9rem;flex-shrink:0;
-}
-.pill-icon.purple{background:#ede9fe;color:var(--accent);}
-.pill-icon.blue  {background:#dbeafe;color:var(--blue);}
-.pill-icon.tag   {background:#fce7f3;color:var(--tag);}
-.pill-label{font-weight:500;letter-spacing:0.01em;}
-.pill-sub{font-size:0.76rem;color:var(--muted);margin-left:auto;}
-.pill-arrow{color:var(--border);font-size:0.9rem;transition:color 0.2s,transform 0.2s;}
-.pill:hover .pill-arrow{color:var(--accent);transform:translateX(3px);}
-
-/* ── RIGHT — ABOUT ── */
-.hero-right{
-  display:flex;flex-direction:column;
-  justify-content:center;
-  padding:4rem 4rem 4rem 3.5rem;
-  background:var(--bg2);
-  overflow-y:auto;
-}
-
-.section-label{
-  font-size:0.68rem;font-weight:500;
-  letter-spacing:0.14em;text-transform:uppercase;
-  color:var(--accent);margin-bottom:1rem;
-  opacity:0;animation:fadeUp 0.7s 0.3s forwards;
-}
-.about-heading{
-  font-family:'Cormorant Garamond',serif;
-  font-size:clamp(1.4rem,2.2vw,2rem);
-  font-weight:400;
-  color:var(--ink);
-  line-height:1.25;
-  margin-bottom:1.6rem;
-  opacity:0;animation:fadeUp 0.7s 0.45s forwards;
-}
-.about-body{
-  opacity:0;animation:fadeUp 0.7s 0.6s forwards;
-}
-.about-body p{
-  font-size:0.92rem;font-weight:300;
-  color:var(--ink2);line-height:1.85;
-  margin-bottom:1rem;
-}
-.about-body p:last-child{margin-bottom:0;}
-
-.meta-grid{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:0.8rem;margin-top:2rem;
-  opacity:0;animation:fadeUp 0.7s 0.75s forwards;
-}
-.meta-card{
-  background:var(--bg);
-  border:1px solid var(--border);
-  border-radius:8px;
-  padding:0.9rem 1.1rem;
-}
-.meta-card .lbl{
-  font-size:0.65rem;font-weight:500;
-  letter-spacing:0.1em;text-transform:uppercase;
-  color:var(--muted);margin-bottom:0.3rem;
-}
-.meta-card .val{
-  font-size:0.85rem;color:var(--ink2);
-  font-weight:400;line-height:1.4;
-}
-.meta-card .val a{color:var(--accent);text-decoration:none;}
-.meta-card .val a:hover{text-decoration:underline;}
-
-/* interests tags */
-.tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:1.6rem;opacity:0;animation:fadeUp 0.7s 0.9s forwards;}
-.tag{
-  font-size:0.72rem;font-weight:400;
-  padding:0.28rem 0.75rem;
-  border-radius:20px;
-  background:var(--bg3);
-  border:1px solid var(--border);
-  color:var(--ink2);
-}
-
-/* ── ANIMATIONS ── */
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(14px);}
-  to{opacity:1;transform:translateY(0);}
-}
-
-/* ── RESPONSIVE ── */
-@media(max-width:780px){
-  html,body{overflow:auto;}
-  .page{grid-template-columns:1fr;height:auto;overflow:visible;}
-  nav{padding:0 1.4rem;}
-  .hero-left{padding:3rem 1.5rem;border-right:none;border-bottom:1px solid var(--border);}
-  .hero-right{padding:3rem 1.5rem;}
-  .meta-grid{grid-template-columns:1fr;}
-}
-</style>
+  <meta charset="UTF-8">
+  <title>Ava Cahill</title>
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<nav>
-  <a href="index.html" class="nav-name">Ava Cahill</a>
-  <ul class="nav-links">
-    <li><a href="research.html">Research</a></li>
-    <li><a href="cv.html">CV</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
-
-<main class="page">
-
-  <!-- LEFT -->
-  <div class="hero-left">
-    <div class="eyebrow">PhD Student &nbsp;·&nbsp; Johns Hopkins University</div>
-    <h1>Ava<br><em>Cahill</em></h1>
-    <p class="tagline">
-      I study <strong>how minds communicate</strong> — across species, across evolution.
-      Comparative psychologist working at the intersection of canine cognition,
-      social learning, and domestication.
-    </p>
-
-    <nav class="nav-pills" aria-label="Site sections">
-      <a href="research.html" class="pill">
-        <span class="pill-icon purple">&#x2728;</span>
-        <span class="pill-label">Research &amp; Projects</span>
-        <span class="pill-sub">Publications · ongoing work</span>
-        <span class="pill-arrow">&#x2192;</span>
-      </a>
-      <a href="cv.html" class="pill">
-        <span class="pill-icon blue">&#x1F4C4;</span>
-        <span class="pill-label">Curriculum Vitae</span>
-        <span class="pill-sub">Education · awards · skills</span>
-        <span class="pill-arrow">&#x2192;</span>
-      </a>
-      <a href="contact.html" class="pill">
-        <span class="pill-icon tag">&#x2709;</span>
-        <span class="pill-label">Contact</span>
-        <span class="pill-sub">acahill8@jhu.edu</span>
-        <span class="pill-arrow">&#x2192;</span>
-      </a>
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-container">
+    <h1 class="logo">Ava Cahill</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="research.html">Research</a>
+      <a href="cv.html">CV</a>
+      <a href="contact.html">Contact</a>
     </nav>
   </div>
+</header>
 
-  <!-- RIGHT -->
-  <div class="hero-right">
-    <div class="section-label">About me</div>
-    <h2 class="about-heading">Comparative psychologist<br>curious about what dogs know.</h2>
-    <div class="about-body">
-      <p>I'm a first-year PhD student in the Department of Psychological and Brain Sciences at Johns Hopkins University, where I work in Dr. Christopher Krupenye's lab. My research centers on comparative cognition — how different species perceive, learn from, and communicate with others.</p>
-      <p>My undergraduate work at Boston College focused on how domestication has shaped dogs' responses to communicative cues, comparing them with dingoes. That work became my honors thesis and a manuscript currently under review.</p>
-      <p>Outside the lab I'm a wilderness first aider, former radio DJ at WZBC 90.3 FM, and graphic designer.</p>
+<!-- HERO -->
+<section class="hero">
+  <h1>Ava Cahill</h1>
+  <p class="subtitle">Cognition • Behavior • Research</p>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <div class="about-container">
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>
+        I am interested in how animals understand the minds of others,
+        with a focus on social cognition, communication, and theory of mind.
+      </p>
+      <p>
+        My work explores how domestication and evolution shape cognitive
+        abilities across species.
+      </p>
     </div>
 
-    <div class="meta-grid">
-      <div class="meta-card">
-        <div class="lbl">Institution</div>
-        <div class="val">Johns Hopkins University<br>Baltimore, MD</div>
-      </div>
-      <div class="meta-card">
-        <div class="lbl">Advisor</div>
-        <div class="val">Dr. Christopher Krupenye</div>
-      </div>
-      <div class="meta-card">
-        <div class="lbl">Email</div>
-        <div class="val"><a href="mailto:acahill8@jhu.edu">acahill8@jhu.edu</a></div>
-      </div>
-      <div class="meta-card">
-        <div class="lbl">Expected graduation</div>
-        <div class="val">May 2030</div>
-      </div>
-    </div>
+    <!-- Optional image -->
+    <!-- <img src="your-photo.jpg" alt="Ava Cahill"> -->
 
-    <div class="tags">
-      <span class="tag">Comparative cognition</span>
-      <span class="tag">Canine behavior</span>
-      <span class="tag">Social learning</span>
-      <span class="tag">Domestication</span>
-      <span class="tag">Theory of mind</span>
-      <span class="tag">Evolutionary psychology</span>
-    </div>
   </div>
+</section>
 
-</main>
 </body>
 </html>
