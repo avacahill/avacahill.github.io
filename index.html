@@ -122,10 +122,10 @@ nav a:hover{
 /* PHYLO SVG */
 .phylo-bg{
   position:absolute;
-  top:-45px;
+  top:0px;
   left:0;
   width:100%;
-  height:calc(100% + 45px);
+  height:100%;
   z-index:1;
   pointer-events:none;
 }
@@ -187,7 +187,7 @@ nav a:hover{
 <!-- HERO -->
 <section class="hero">
 
-  <svg class="phylo-bg" viewBox="0 0 1000 820" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+  <svg class="phylo-bg" viewBox="0 0 1000 820" preserveAspectRatio="xMidYMin meet" xmlns="http://www.w3.org/2000/svg">
     <defs>
 
       <!-- Motion paths: each traces the full route from root to tip -->
@@ -196,8 +196,8 @@ nav a:hover{
       <path id="path-dingo"     d="M90,490 L108,490 L108,278 L135,278 L135,208 L162,208 L162,148 L200,148 L200,208 L700,208"/>
       <path id="path-fox"       d="M90,490 L108,490 L108,278 L135,278 L135,208 L162,208 L162,278 L700,278"/>
       <path id="path-human"     d="M90,490 L108,490 L108,278 L135,278 L135,468 L215,468 L215,348 L245,348 L268,348 L700,348"/>
-      <path id="path-chimp"     d="M90,490 L108,490 L108,278 L135,278 L135,468 L215,468 L215,348 L245,348 L268,348 L268,408 L298,408 L700,408"/>
-      <path id="path-bonobo"    d="M90,490 L108,490 L108,278 L135,278 L135,468 L215,468 L215,348 L245,348 L268,348 L268,468 L298,468 L700,468"/>
+      <path id="path-chimp"     d="M90,490 L108,490 L108,278 L135,278 L135,468 L215,468 L215,348 L245,348 L268,348 L268,408 L700,408"/>
+      <path id="path-bonobo"    d="M90,490 L108,490 L108,278 L135,278 L135,468 L215,468 L215,348 L245,348 L268,348 L268,468 L700,468"/>
       <path id="path-gorilla"   d="M90,490 L108,490 L108,278 L135,278 L135,468 L215,468 L215,348 L245,348 L245,528 L700,528"/>
       <path id="path-orangutan" d="M90,490 L108,490 L108,278 L135,278 L135,468 L215,468 L215,588 L700,588"/>
       <path id="path-raven"     d="M90,490 L108,490 L108,648 L700,648"/>
@@ -309,14 +309,10 @@ nav a:hover{
     <polyline class="br bd bd11" opacity=".22" stroke-width="1.4" points="268,348 268,468"/>
     <!-- human tip -->
     <polyline class="br bd bd11" opacity=".22" stroke-width="1.4" points="268,348 700,348"/>
-    <!-- chimp+bonobo stem -->
-    <polyline class="br bd bd11" opacity=".22" stroke-width="1.4" points="268,408 298,408"/>
-    <!-- chimp+bonobo vertical -->
-    <polyline class="br bd bd12" opacity=".22" stroke-width="1.4" points="298,408 298,468"/>
     <!-- chimp tip -->
-    <polyline class="br bd bd13" opacity=".22" stroke-width="1.4" points="298,408 700,408"/>
+    <polyline class="br bd bd12" opacity=".22" stroke-width="1.4" points="268,408 700,408"/>
     <!-- bonobo tip -->
-    <polyline class="br bd bd13" opacity=".22" stroke-width="1.4" points="298,468 700,468"/>
+    <polyline class="br bd bd12" opacity=".22" stroke-width="1.4" points="268,468 700,468"/>
     <!-- raven -->
     <polyline class="br bd bd14" opacity=".22" stroke-width="1.4" points="108,648 700,648"/>
     <!-- dolphin -->
